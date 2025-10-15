@@ -13,24 +13,41 @@
     </FluentHeader>
 
     <FluentLabel Typo="Typography.Subject">
-        When you toggle the theme (button in header) is does not update this page.<br />
-        If you leave this page and come back the page is updated with the correct theme.
+        If 'Use Card' is not checked, the it seems to work fine.<br />
+        If it is checked, then the issues happen.
     </FluentLabel>
 
-    <FluentCard>
-        <FluentGrid>
-            <FluentGridItem>
-                <FluentCard>
-                    <FluentLabel>Item #1</FluentLabel>
-                </FluentCard>
-            </FluentGridItem>
+    <br />
+    <FluentCheckbox @bind-Value="@useCard">Use Card</FluentCheckbox>
+    <br />
 
-            <FluentGridItem>
-                <FluentCard>
-                    <FluentLabel>Item #2</FluentLabel>
-                </FluentCard>
-            </FluentGridItem>
-        </FluentGrid>
-    </FluentCard>
+    @{
+        if (useCard)
+        {
+            <FluentLabel Typo="Typography.Subject">
+                When you toggle the theme (button in header) is does not update this page.<br />
+                If you leave this page and come back the page is updated with the correct theme.
+            </FluentLabel>
 
+            <FluentCard>
+                <FluentGrid>
+                    <FluentGridItem>
+                        <FluentCard>
+                            <FluentLabel>Item #1</FluentLabel>
+                        </FluentCard>
+                    </FluentGridItem>
+
+                    <FluentGridItem>
+                        <FluentCard>
+                            <FluentLabel>Item #2</FluentLabel>
+                        </FluentCard>
+                    </FluentGridItem>
+                </FluentGrid>
+            </FluentCard>
+        }
+    }
 </FluentLayout>
+
+@code {
+    private bool useCard;
+}
