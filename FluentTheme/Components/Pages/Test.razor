@@ -1,0 +1,36 @@
+﻿@page "/test"
+@rendermode InteractiveServer
+
+<PageTitle>Test</PageTitle>
+
+<FluentLayout>
+    <FluentHeader>
+        <FluentStack VerticalAlignment="VerticalAlignment.Center">
+            Fluent Theme (Test)
+            <FluentSpacer />
+            <ThemeToggle />
+        </FluentStack>
+    </FluentHeader>
+
+    <FluentLabel Typo="Typography.Subject">
+        When you toggle the theme (button in header) is does not update this page.<br />
+        If you leave this page and come back the page is updated with the correct theme.
+    </FluentLabel>
+
+    <FluentCard>
+        <FluentGrid>
+            <FluentGridItem>
+                <FluentCard>
+                    <FluentLabel>Item #1</FluentLabel>
+                </FluentCard>
+            </FluentGridItem>
+
+            <FluentGridItem>
+                <FluentCard>
+                    <FluentLabel>Item #2</FluentLabel>
+                </FluentCard>
+            </FluentGridItem>
+        </FluentGrid>
+    </FluentCard>
+
+</FluentLayout>
