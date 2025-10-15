@@ -13,41 +13,32 @@
     </FluentHeader>
 
     <FluentLabel Typo="Typography.Subject">
-        If 'Use Card' is not checked, the it seems to work fine.<br />
-        If it is checked, then the issues happen.
+        If 'Minimal Style' is checked, the it seems to work fine.<br />
+        If it is not selected, then the issues happen.<br /><br />
+        If you uncheck, click the button, and then check again you must refresh the page for it to work.
     </FluentLabel>
 
     <br />
-    <FluentCheckbox @bind-Value="@useCard">Use Card</FluentCheckbox>
+    <FluentCheckbox @bind-Value="@minimalStyle">Minimal Style</FluentCheckbox>
     <br />
 
-    @{
-        if (useCard)
-        {
-            <FluentLabel Typo="Typography.Subject">
-                When you toggle the theme (button in header) is does not update this page.<br />
-                If you leave this page and come back the page is updated with the correct theme.
-            </FluentLabel>
+    <FluentCard MinimalStyle="@minimalStyle">
+        <FluentGrid>
+            <FluentGridItem>
+                <FluentCard MinimalStyle="@minimalStyle">
+                    <FluentLabel>Item #1</FluentLabel>
+                </FluentCard>
+            </FluentGridItem>
 
-            <FluentCard>
-                <FluentGrid>
-                    <FluentGridItem>
-                        <FluentCard>
-                            <FluentLabel>Item #1</FluentLabel>
-                        </FluentCard>
-                    </FluentGridItem>
-
-                    <FluentGridItem>
-                        <FluentCard>
-                            <FluentLabel>Item #2</FluentLabel>
-                        </FluentCard>
-                    </FluentGridItem>
-                </FluentGrid>
-            </FluentCard>
-        }
-    }
+            <FluentGridItem>
+                <FluentCard MinimalStyle="@minimalStyle">
+                    <FluentLabel>Item #2</FluentLabel>
+                </FluentCard>
+            </FluentGridItem>
+        </FluentGrid>
+    </FluentCard>
 </FluentLayout>
 
 @code {
-    private bool useCard;
+    private bool minimalStyle = true;
 }
